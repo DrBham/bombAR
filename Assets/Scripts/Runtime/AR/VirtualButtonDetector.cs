@@ -77,6 +77,10 @@ public class VirtualButtonDetector : MonoBehaviour
     [Range(0.01f, 0.5f)]
     public float releaseThreshold = 0.035f;
 
+    [Tooltip("Selisih minimum kandidat terkuat terhadap tombol lain. Mencegah tombol yang salah dipilih ketika beberapa area berubah hampir sama.")]
+    [Range(0f, 0.1f)]
+    public float selectionMargin = 0.012f;
+
     [Min(1)]
     public int framesToPress = 5;
 
@@ -367,6 +371,7 @@ public class VirtualButtonDetector : MonoBehaviour
         // boleh menjadi kandidat tekanan dalam satu pemeriksaan.
         int bestIndex = -1;
         float strongestDiff = pressThreshold;
+        float secondStrongestDiff = 0f;
 
         for (int i = 0; i < buttons.Length; i++)
         {
@@ -377,9 +382,30 @@ public class VirtualButtonDetector : MonoBehaviour
 
             if (button.diff > strongestDiff)
             {
+                secondStrongestDiff = strongestDiff;
                 strongestDiff = button.diff;
                 bestIndex = i;
             }
+            else if (button.diff > secondStrongestDiff)
+            {
+                secondStrongestDiff = button.diff;
+            }
+        }
+
+        // Jangan menebak bila dua tombol menghasilkan perubahan yang hampir
+        // sama. Kondisi ini biasanya terjadi karena jari menutupi batas dua
+        // tombol atau pencahayaan kamera berubah.
+        if (bestIndex >= 0 &&
+            strongestDiff - secondStrongestDiff < selectionMargin)
+        {
+            for (int i = 0; i < buttons.Length; i++)
+            {
+                if (!buttons[i].pressed)
+                    buttons[i].overCount = 0;
+            }
+
+            status = "Tekanan belum jelas. Tutupi bagian tengah satu tombol.";
+            return;
         }
 
         // Tambah hitungan hanya untuk kandidat terkuat.

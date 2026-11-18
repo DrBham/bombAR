@@ -407,7 +407,7 @@ MonoBehaviour:
     center: {x: 0.5, y: 0.8}
     size: {x: 0.2, y: 0.15}
     childName: Tombol_Merah
-    sizeMeters: {x: 0.045, y: 0.045}
+    sizeMeters: {x: 0.03, y: 0.03}
     onPressed:
       m_PersistentCalls:
         m_Calls: []
@@ -418,7 +418,7 @@ MonoBehaviour:
     center: {x: 0.5, y: 0.8}
     size: {x: 0.2, y: 0.15}
     childName: Tombol_Biru
-    sizeMeters: {x: 0.045, y: 0.045}
+    sizeMeters: {x: 0.03, y: 0.03}
     onPressed:
       m_PersistentCalls:
         m_Calls: []
@@ -429,7 +429,7 @@ MonoBehaviour:
     center: {x: 0.5, y: 0.8}
     size: {x: 0.2, y: 0.15}
     childName: Tombol_Hijau
-    sizeMeters: {x: 0.045, y: 0.045}
+    sizeMeters: {x: 0.03, y: 0.03}
     onPressed:
       m_PersistentCalls:
         m_Calls: []
@@ -440,7 +440,7 @@ MonoBehaviour:
     center: {x: 0.5, y: 0.8}
     size: {x: 0.2, y: 0.15}
     childName: Tombol_Kuning
-    sizeMeters: {x: 0.045, y: 0.045}
+    sizeMeters: {x: 0.03, y: 0.03}
     onPressed:
       m_PersistentCalls:
         m_Calls: []
@@ -451,7 +451,7 @@ MonoBehaviour:
     center: {x: 0.5, y: 0.9}
     size: {x: 0.32, y: 0.15}
     childName: Tombol_Mulai
-    sizeMeters: {x: 0.09, y: 0.05}
+    sizeMeters: {x: 0.065, y: 0.035}
     onPressed:
       m_PersistentCalls:
         m_Calls:
@@ -472,6 +472,7 @@ MonoBehaviour:
         m_Calls: []
   pressThreshold: 0.075
   releaseThreshold: 0.035
+  selectionMargin: 0.012
   framesToPress: 5
   framesToRelease: 2
   checkInterval: 0.06
@@ -528,7 +529,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 10fc4df2da32a41aaa32d77bc913491c, type: 2}
+  sharedProfile: {fileID: 0}
 --- !u!4 &832575519
 Transform:
   m_ObjectHideFlags: 0
