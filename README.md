@@ -91,21 +91,17 @@ Urutan ini diperlukan agar virtual button Mulai dapat membuka ruang virtual.
 5. Jalankan **Build and Run**.
 6. Izinkan akses kamera pada ponsel.
 7. Arahkan kamera ke marker `Assets/Art/Markers/Bomb.png`.
-8. Tunggu kalibrasi selesai sebelum menyentuh virtual button.
+8. Setelah objek muncul, ketuk tombol warna langsung pada layar.
 
 Pengujian marker dan kamera dilakukan pada perangkat Android karena Game View Unity Editor tidak menyediakan input kamera AR yang sama dengan perangkat.
 
-## Menggunakan Virtual Button
+## Menggunakan Tombol AR
 
-1. Letakkan marker pada permukaan stabil dengan pencahayaan merata.
-2. Arahkan kamera hingga marker dan semua tombol terlihat jelas.
-3. Jangan menyentuh tombol selama proses kalibrasi.
-4. Setelah kalibrasi selesai, tutupi bagian tengah satu tombol dengan satu jari.
-5. Hindari menutup dua tombol sekaligus.
-6. Tombol warna memilih kabel sesuai warna yang terdeteksi.
-7. Tombol Mulai membuka scene `VirtualRoom`.
-
-Jika muncul pesan **Tekanan belum jelas**, angkat jari lalu tutupi kembali bagian tengah satu tombol. Sistem tidak memilih tombol ketika perubahan dua area hampir sama.
+1. Letakkan marker pada permukaan stabil dan arahkan kamera hingga objek muncul.
+2. Ketuk langsung objek `Merah`, `Biru`, `Hijau`, atau `Kuning` pada layar HP.
+3. Sistem menggunakan raycast dari posisi sentuhan, sehingga tidak bergantung pada perubahan cahaya kamera.
+4. Tombol warna yang disentuh akan memilih kabel dengan warna yang sama.
+5. Tekan tombol **VR** di kanan atas layar untuk membuka scene `VirtualRoom`.
 
 ## Menjalankan Ruang Virtual
 
